@@ -1,6 +1,6 @@
 import { ERC20BridgeSource } from '@0x/asset-swapper';
 import { AcceptedOrderInfo, RejectedOrderInfo } from '@0x/mesh-rpc-client';
-import { APIOrder, OrdersChannelSubscriptionOpts, SignedOrder, UpdateOrdersChannelMessage } from '@0x/types';
+import { APIOrder, OrdersChannelSubscriptionOpts, SignedOrder, UpdateOrdersChannelMessage, ZeroExTransaction } from '@0x/types';
 import { BigNumber } from '@0x/utils';
 
 export enum OrderWatcherLifeCycleEvents {
@@ -301,6 +301,27 @@ export interface GetSwapQuoteResponse {
     from?: string;
 }
 
+export interface GetMetaTransactionQuoteResponse {
+    price: BigNumber;
+    zeroExTransactionHash: string;
+    zeroExTransaction: ZeroExTransaction;
+    orders: SignedOrder[];
+    buyAmount: BigNumber;
+    sellAmount: BigNumber;
+}
+
+export interface PostTransactionResponse {
+    transactionHash: string;
+}
+
+export interface ZeroExTransactionWithoutDomain {
+    salt: BigNumber;
+    expirationTimeSeconds: BigNumber;
+    gasPrice: BigNumber;
+    signerAddress: string;
+    data: string;
+}
+
 export interface GetSwapQuoteRequestParams {
     sellToken: string;
     buyToken: string;
@@ -310,6 +331,15 @@ export interface GetSwapQuoteRequestParams {
     slippagePercentage?: number;
     gasPrice?: BigNumber;
     excludedSources?: ERC20BridgeSource[];
+}
+
+export interface GetTransactionRequestParams {
+    takerAddress: string;
+    sellToken: string;
+    buyToken: string;
+    sellAmount?: BigNumber;
+    buyAmount?: BigNumber;
+    slippagePercentage?: number;
 }
 
 export interface CalculateSwapQuoteParams {
@@ -327,4 +357,14 @@ export interface CalculateSwapQuoteParams {
 export interface GetSwapQuoteResponseLiquiditySource {
     name: string;
     proportion: BigNumber;
+}
+
+export interface CalculateMetaTransactionQuoteParams {
+    takerAddress: string;
+    buyTokenAddress: string;
+    sellTokenAddress: string;
+    buyAmount: BigNumber | undefined;
+    sellAmount: BigNumber | undefined;
+    from: string | undefined;
+    slippagePercentage?: number;
 }
