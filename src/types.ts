@@ -312,6 +312,7 @@ export interface GetMetaTransactionQuoteResponse {
 
 export interface PostTransactionResponse {
     transactionHash: string;
+    signedEthereumTransaction: string;
 }
 
 export interface ZeroExTransactionWithoutDomain {

@@ -889,6 +889,20 @@
     ethers "~4.0.4"
     lodash "^4.17.11"
 
+"@0x/web3-wrapper@^7.0.6":
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/@0x/web3-wrapper/-/web3-wrapper-7.0.6.tgz#d0ccbc59839b5dc35fa5f94e1fdd6fb37b2d53ab"
+  integrity sha512-ErVNPzD4qjVCEigzg7SA7nSnKW1XnoF0krSbUNKqg2AXiLWU4J81bp+lqf08IzjcMdq4k+d7VYc9jYh88xRTRw==
+  dependencies:
+    "@0x/assert" "^3.0.6"
+    "@0x/json-schemas" "^5.0.6"
+    "@0x/typescript-typings" "^5.0.2"
+    "@0x/utils" "^5.4.0"
+    ethereum-types "^3.1.0"
+    ethereumjs-util "^5.1.1"
+    ethers "~4.0.4"
+    lodash "^4.17.11"
+
 "@babel/code-frame@^7.0.0":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
