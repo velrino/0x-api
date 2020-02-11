@@ -1,9 +1,7 @@
 import {
-    ERC20BridgeSource,
     ExtensionContractType,
     Orderbook,
     SwapQuoteConsumer,
-    SwapQuoteOrdersBreakdown,
     SwapQuoter,
 } from '@0x/asset-swapper';
 import { SupportedProvider } from '@0x/order-utils';
