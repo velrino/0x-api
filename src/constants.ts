@@ -14,6 +14,7 @@ export const DEFAULT_LOGGER_INCLUDE_TIMESTAMP = true;
 export const ONE_SECOND_MS = 1000;
 export const ONE_MINUTE_MS = ONE_SECOND_MS * 60;
 export const TEN_MINUTES_MS = ONE_MINUTE_MS * 10;
+export const ERC20_BRIDGE_ASSET_PREFIX = '0xdc1600f3';
 
 // Swap Quoter
 export const QUOTE_ORDER_EXPIRATION_BUFFER_MS = ONE_SECOND_MS * 30; // Ignore orders that expire in 30 seconds
